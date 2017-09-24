@@ -20,7 +20,25 @@
   <script src="galleria/galleria-1.5.7.js"></script>
   <script src="galleria/plugins/facebook/galleria.facebook.js"></script>
   <script src="resources/js/galleria.js"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : 'your-app-id',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+    };
 
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 </head>
 <body>
 <nav class="navbar navbar-default">
